@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Piss</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+
+    .jumbotron{
+    	background-color: #503a77;
+    }
+
+    .form-group{
+    	margin: 100px;
+    }
+
+    .btn-default{
+    	border-radius: 5px;
+    	background: none;
+    	color: white;
+    	box-shadow: none !important;
+      margin-top: 20px;
+      padding: 10px;
+    }
+    
+    input{
+    	text-align: center;
+    }
+
+    body{
+    	background-color: #503a77;
+    	color: white;
+    }
+
+    label{
+      padding-top: 20px;
+    }
+    
+    @media screen and (min-width: 769px){
+      .form-group{
+        margin: 0 30%;
+      }
+    }
+
+    .modal-content{
+      color: black;
+    }
+
+    li{
+      text-align: left;
+    }
+
+    #what-this{
+      padding: none;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+ 
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="jumbotron">
+      <h1>Count BACula</h1>
+    	
+    </div>
+    	<div class="form-group">
+	  		<form action="." method="POST">
+	  		 
+  	  			    <label for="gender-select">What's your gender?</label>			     
+                <select class="form-control" id="gender-select" name="gender">
+  				          <option></option>
+  				          <option>Male</option>
+  				          <option>Female</option>
+  				          <option>Non-Binary</option>
+    		        </select>
+	  		
+		            <label for="numbah2">What's your weight?</label>
+		            <input type="number" class="form-control" name="weight" id="numbah2">
+
+		            <label for="numbah3">How many hours?</label>
+		            <input type="number" class="form-control" name="period" id="numbah3">
+
+                <label for="numbah4">How many drinks?</label>
+
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="what-this">What's this?</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">What counts as a drink?</h4>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>A 12 ounce can of beer</li>
+                          <li>A 5 ounce glass of wine</li>
+                          <li>A 1.5 ounce shot</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                  <input type="number" class="form-control" name="drinks" id="numbah4">
+          
+	        <input  type="submit" name="my-form" value="Calculate" class='btn-default' id="submit">
+		    </div>
+
+    {% if sumvalue %}
+      <h1>Your BAC is {{ sumvalue }}</h1>
+    {% endif %}
+
+    </form>
+
+  </div>
+</div>
+</body>
+</html>
+
+<script>
+
+$('#submit').click(function(){
+  if($('#gender-select').val().length == 0 || $('#numbah2').val().length == 0 || $('#numbah3').val().length == 0 ) || $('#numbah4').val().length == 0){
+      alert('You missed some fields');
+  }
+})
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+</script>

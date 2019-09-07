@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Piss</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+ .jumbotron{
+    	background-color: #503a77;
+    	padding-top: 100px;
+    }
+
+    body{
+    	background-color: #503a77;
+    	color: white;
+    	font-size: 80px;
+    	text-align: center;
+    }
+
+    .info{
+    	padding: 50px;
+    }
+
+</style>
+</head>
+<body>
+<div class="jumbotron">
+{% if sumvalue %}
+      Your BAC is {{ sumvalue }}
+    {% endif %}
+
+    <div class="info">
+    <h1>
+    	{{ info[0] }}
+    </h1>
+    <h3>
+    	{{ info[1] }}
+    </h3>
+    <h3>
+    	{{ info[2] }}
+    </h3>
+    </div>
+</div>
+</body>
